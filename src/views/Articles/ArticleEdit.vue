@@ -118,7 +118,7 @@ export default {
   methods: {
     async getArticle() {
       const article = await axios.get(
-        `${process.env.VUE_APP_API_URL}/articles/${this.id}`
+        `https://proiect-tic-antique-shop.herokuapp.com/articles/${this.id}`
       );
       const {
         name,
@@ -160,7 +160,7 @@ export default {
         year: this.year,
       };
       await axios.put(
-        `${process.env.VUE_APP_API_URL}/admin/articles/${this.id}`,
+        `https://proiect-tic-antique-shop.herokuapp.com/admin/articles/${this.id}`,
         article,
         {
           headers: {

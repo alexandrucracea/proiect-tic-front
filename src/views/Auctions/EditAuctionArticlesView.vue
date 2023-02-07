@@ -169,7 +169,7 @@ export default {
       auction.articles = this.loadedArticles;
       console.log(auction.articles);
       await axios.put(
-        `${process.env.VUE_APP_API_URL}/admin/auctions/${this.id}`,
+        `https://proiect-tic-antique-shop.herokuapp.com/admin/auctions/${this.id}`,
         auction,
         {
           headers: {
@@ -183,7 +183,7 @@ export default {
       const auction = this.auction;
       auction.articles = this.loadedArticles.concat(this.selectedNewArticles);
       await axios.put(
-        `${process.env.VUE_APP_API_URL}/admin/auctions/${this.id}`,
+        `https://proiect-tic-antique-shop.herokuapp.com/admin/auctions/${this.id}`,
         auction,
         {
           headers: {

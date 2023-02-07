@@ -116,7 +116,7 @@ export default {
         year: this.year,
       };
       await axios.post(
-        `${process.env.VUE_APP_API_URL}/admin/articles`,
+        `https://proiect-tic-antique-shop.herokuapp.com/admin/articles`,
         article,
         {
           headers: {

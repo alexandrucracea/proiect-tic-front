@@ -72,7 +72,7 @@ export default {
   methods: {
     async getAuction() {
       const auction = await axios.get(
-        `${process.env.VUE_APP_API_URL}/auctions/${this.id}`
+        `https://proiect-tic-antique-shop.herokuapp.com/auctions/${this.id}`
       );
       this.auction = auction?.data || {};
     },

@@ -84,19 +84,19 @@ export default createStore({
     },
     async loadArticles({ commit }) {
       const articles = await axios.get(
-        `${process.env.VUE_APP_API_URL}/articles`
+        `https://proiect-tic-antique-shop.herokuapp.com/articles`
       );
       commit("setArticles", articles.data);
     },
     async loadAllAuctions({ commit }) {
       const auctions = await axios.get(
-        `${process.env.VUE_APP_API_URL}/auctions`
+        `https://proiect-tic-antique-shop.herokuapp.com/auctions`
       );
       commit("setAuctions", auctions.data);
     },
     async deleteArticle({ commit }, id) {
       await axios.delete(
-        `${process.env.VUE_APP_API_URL}/admin/articles/${id}`,
+        `https://proiect-tic-antique-shop.herokuapp.com/admin/articles/${id}`,
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -104,13 +104,13 @@ export default createStore({
         }
       );
       const articles = await axios.get(
-        `${process.env.VUE_APP_API_URL}/articles`
+        `https://proiect-tic-antique-shop.herokuapp.com/articles`
       );
       commit("setArticles", articles.data);
     },
     async deleteAuction({ commit }, id) {
       await axios.delete(
-        `${process.env.VUE_APP_API_URL}/admin/auctions/${id}`,
+        `https://proiect-tic-antique-shop.herokuapp.com/admin/auctions/${id}`,
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -118,7 +118,7 @@ export default createStore({
         }
       );
       const auctions = await axios.get(
-        `${process.env.VUE_APP_API_URL}/auctions`
+        `https://proiect-tic-antique-shop.herokuapp.com/auctions`
       );
       commit("setAuctions", auctions.data);
     },
@@ -126,7 +126,7 @@ export default createStore({
       for (let i = 0; i < articlesUpdated.length; i++) {
         articlesUpdated[i].available = false;
         await axios.put(
-          `${process.env.VUE_APP_API_URL}/admin/articles/${articlesUpdated[i].id}`,
+          `https://proiect-tic-antique-shop.herokuapp.com/admin/articles/${articlesUpdated[i].id}`,
           articlesUpdated[i],
           {
             headers: {
@@ -136,7 +136,7 @@ export default createStore({
         );
       }
       const articles = await axios.get(
-        `${process.env.VUE_APP_API_URL}/articles`
+        `https://proiect-tic-antique-shop.herokuapp.com/articles`
       );
       commit("setArticles", articles.data);
     },

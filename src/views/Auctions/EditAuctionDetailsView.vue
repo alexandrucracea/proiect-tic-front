@@ -85,7 +85,7 @@ export default {
   methods: {
     async getAuction() {
       const auction = await axios.get(
-        `${process.env.VUE_APP_API_URL}/auctions/${this.id}`
+        `https://proiect-tic-antique-shop.herokuapp.com/auctions/${this.id}`
       );
       const { startDate, endDate, description, status, articles, name } =
         auction.data || {};
@@ -112,7 +112,7 @@ export default {
         articles: this.articles,
       };
       await axios.post(
-        `${process.env.VUE_APP_API_URL}/admin/auctions`,
+        `https://proiect-tic-antique-shop.herokuapp.com/admin/auctions`,
         auction,
         {
           headers: {

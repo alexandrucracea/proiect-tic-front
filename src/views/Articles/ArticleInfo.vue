@@ -88,7 +88,7 @@ export default {
   methods: {
     async getArticle() {
       const article = await axios.get(
-        `${process.env.VUE_APP_API_URL}/articles/${this.id}`
+        `https://proiect-tic-antique-shop.herokuapp.com/articles/${this.id}`
       );
       this.article = article?.data || {};
     },

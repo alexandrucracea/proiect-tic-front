@@ -92,7 +92,7 @@ export default {
         articles: this.articles,
       };
       await axios.post(
-        `${process.env.VUE_APP_API_URL}/admin/auctions`,
+        `https://proiect-tic-antique-shop.herokuapp.com/admin/auctions`,
         auction,
         {
           headers: {

@@ -52,7 +52,7 @@ export default {
   methods: {
     async fetchData(user) {
       const response = await axios.post(
-        `${process.env.VUE_APP_API_URL}/login`,
+        `https://proiect-tic-antique-shop.herokuapp.com/login`,
         user
       );
       return response?.data || {};
